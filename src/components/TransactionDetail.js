@@ -153,50 +153,15 @@ class TransactionDetail extends PureComponent {
 	};
 	
 	openBlock = (block): void => {
-		let url = "";
-		const selectedCrypto = this.props.wallet.selectedCrypto;
-		if (selectedCrypto === "bitcoin") url = `https://blockstream.info/block-height/${block}`;
-		if (selectedCrypto === "bitcoinTestnet") url = `https://blockstream.info/testnet/block-height/${block}`;
-		if (selectedCrypto === "litecoin") url = `https://chain.so/block/LTC/${block}`;
-		if (selectedCrypto === "litecoinTestnet") url = `https://chain.so/block/LTC/${block}`;
-		if (selectedCrypto === "pepecoin") url = `https://blockbook.pepeblocks.com/block/${block}`;
-		openUrl(url);
+		openUrl(`https://blockbook.pepeblocks.com/block/${block}`);
 	};
 	
 	openAddress = (address = ""): void => {
-		let url = "";
-		const selectedCrypto = this.props.wallet.selectedCrypto;
-		if (selectedCrypto === "bitcoin") url = `https://blockstream.info/address/${address}`;
-		if (selectedCrypto === "bitcoinTestnet") url = `https://blockstream.info/testnet/address/${address}`;
-		if (selectedCrypto === "litecoin") url = `https://chain.so/address/LTC/${address}`;
-		if (selectedCrypto === "litecoinTestnet") url = `https://chain.so/address/LTCTEST/${address}`;
-		if (selectedCrypto === "pepecoin") url = `https://blockbook.pepeblocks.com/address/${address}`;
-		openUrl(url);
+		openUrl(`https://blockbook.pepeblocks.com/address/${address}`);
 	};
 	
 	openMessage = (tx = ""): void => {
-		let url = "";
-		const selectedCrypto = this.props.wallet.selectedCrypto;
-		switch (selectedCrypto) {
-			case "bitcoin":
-				url = `https://chain.so/tx/BTC/${tx}`;
-				break;
-			case "bitcoinTestnet":
-				url = `https://chain.so/tx/BTCTEST/${tx}`;
-				break;
-			case "litecoin":
-				url = `https://chain.so/tx/LTC/${tx}`;
-				break;
-			case "litecoinTestnet":
-				url = `https://chain.so/tx/LTCTEST/${tx}`;
-				break;
-			case "pepecoin":
-				url = `https://blockbook.pepeblocks.com/tx/${tx}`;
-				break;
-			default:
-				return;
-		}
-		openUrl(url);
+		openUrl(`https://blockbook.pepeblocks.com/tx/${tx}`);
 	};
 	
 	getAmount = (amount, displayFeePerByte = true): string => {

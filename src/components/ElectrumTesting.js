@@ -170,10 +170,10 @@ class ElectrumTesting extends PureComponent<Props> {
 	
 	getAddresses = (type = "array") => {
 		const addresses = {
-			bitcoin: ["bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq", "bc1q6f6l84dd07g2478ggvwc8h0cyszz9m4j3kjzjz"],
-			bitcoinTestnet: ["tb1qlffxly3zuc8prf8l4v54z8ddsequz77j3s8q8l"],
-			litecoin: ["ltc1qmz65daz7dxqueuwznd3qrrjnudzs3xkgf7kwql", "ltc1qvn4euzcmjn6lqw56seru32rvjh5y03jgde4pgn", "ltc1qh8uyuuk560qgalmshh3fttp8m4n9cjpjyu5dpt"],
-			litecoinTestnet: ["tltc1qlffxly3zuc8prf8l4v54z8ddsequz77jgc97hk", "tltc1q6q3u7tureyx0c5m9y4exfqynl626sppu56u7w3"]
+			bitcoin: ["", ""],
+			bitcoinTestnet: [""],
+			litecoin: ["", "", ""],
+			litecoinTestnet: ["", ""]
 		};
 		if (type === "array") {
 			return this.props.wallet.wallets[this.props.wallet.selectedWallet].addresses[this.state.selectedCrypto] || addresses[this.state.selectedCrypto];

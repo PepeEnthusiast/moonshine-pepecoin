@@ -405,6 +405,9 @@ const fallbackBroadcastTransaction = async ({ rawTx = "", selectedCrypto = "bitc
 			body: rawTx
 		};
 		let response = "";
+
+		//TODO: remove other coins and fallback to blockbook.pepeblocks.com (pepecoin)
+
 		switch (selectedCrypto) {
 			case "bitcoin":
 				response = await fetch(`https://blockstream.info/api/tx`, config);

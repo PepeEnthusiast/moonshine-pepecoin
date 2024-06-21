@@ -695,13 +695,7 @@ const openUrl = (url = "") => {
 
 const openTxId = (txid = "", selectedCrypto = ""): void => {
 	if (!txid || !selectedCrypto) return;
-	let url = "";
-	if (selectedCrypto === "bitcoin") url = `https://blockstream.info/tx/${txid}`;
-	if (selectedCrypto === "bitcoinTestnet") url = `https://blockstream.info/testnet/tx/${txid}`;
-	if (selectedCrypto === "litecoin") url = `https://chain.so/tx/LTC/${txid}`;
-	if (selectedCrypto === "litecoinTestnet") url = `https://chain.so/tx/LTCTEST/${txid}`;
-	if (selectedCrypto === "pepecoin") url = `https://blockbook.pepeblocks.com/tx/${txid}`;
-	openUrl(url);
+	openUrl(`https://blockbook.pepeblocks.com/tx/${txid}`);
 };
 
 const pauseExecution = async (duration = 500) => {

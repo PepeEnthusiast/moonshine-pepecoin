@@ -15,46 +15,27 @@ const networks = {
 
 //Max amount of BTC/LTC.
 const maxCoins = {
-	bitcoin: 2100000000000000,
-	bitcoinTestnet: 2100000000000000,
-	litecoin: 8400000000000000,
-	litecoinTestnet: 8400000000000000
+	pepecoin: Infinity
 };
 
 //Returns an array of all available coins from the networks object.
 const availableCoins = Object.keys(networks).map(coin => coin);
 
 const supportsRbf = {
-	bitcoin: true,
-	bitcoinTestnet: true,
-	litecoin: false,
-	litecoinTestnet: false,
 	pepecoin: false
 };
 
 const zeroValueItems = {
-	bitcoin: 0,
-	bitcoinTestnet: 0,
-	litecoin: 0,
-	litecoinTestnet: 0,
 	pepecoin: 0,
 	timestamp: null
 };
 
 const arrayTypeItems = {
-	bitcoin: [],
-	bitcoinTestnet: [],
-	litecoin: [],
-	litecoinTestnet: [],
 	pepecoin: [],
 	timestamp: null
 };
 
 const objectTypeItems = {
-	bitcoin: {},
-	bitcoinTestnet: {},
-	litecoin: {},
-	litecoinTestnet: {},
 	pepecoin: {},
 	timestamp: null
 };
@@ -76,86 +57,28 @@ const defaultWalletShape = {
 	hasBackedUpWallet: false,
 	walletBackupTimestamp: "",
 	keyDerivationPath: {
-		bitcoin: "84",
-		bitcoinTestnet: "84",
-		litecoin: "84",
-		litecoinTestnet: "84",
 		pepecoin: "84"
 	},
 	coinTypePath: {
-		bitcoin: "0",
-		bitcoinTestnet: "1",
-		litecoin: "2",
-		litecoinTestnet: "1",
 		pepecoin: "3",
 	},
-	addressType: { //Accepts bech32, segwit, legacy
-		bitcoin: "bech32",
-		bitcoinTestnet: "bech32",
-		litecoin: "bech32",
-		litecoinTestnet: "bech32",
-		pepecoin: "bech32"
+	addressType: {
+		pepecoin: "legacy"
 	},
 	rbfData: objectTypeItems
 };
 
-const getCoinImage = (coin = "bitcoin") => {
-	try {
-		coin = coin.toLowerCase();
-		coin = coin.replace("testnet", "");
-
-		switch (coin) {
-			case "bitcoin":
-				return require(`../assets/bitcoin.png`);
-			case "litecoin":
-				return require(`../assets/litecoin.png`);
-			case "pepecoin":
-				return require(`../assets/pepecoin.png`);
-			default:
-				return require(`../assets/bitcoin.png`);
-		}
-	} catch (e) {
-		return require(`../assets/bitcoin.png`);
-	}
+const getCoinImage = (coin = "pepecoin") => {
+	return require(`../assets/pepecoin.png`);
 };
 
 const getCoinData = ({ selectedCrypto = "bitcoin", cryptoUnit = "satoshi" }) => {
 	try {
-		let acronym = "BTC";
-		let satoshi = "satoshi";
-		let oshi = "sats";
-		let blockTime = 10; //min
-		switch (selectedCrypto) {
-			case "bitcoin":
-				acronym = cryptoUnit === "satoshi" ? "sats" : "BTC";
-				oshi = "sats";
-				return { acronym, label: "Bitcoin", crypto: "BTC", satoshi, oshi, blockTime };
-			case "bitcoinTestnet":
-				acronym = cryptoUnit === "satoshi" ? "sats" : "BTC";
-				oshi = "sats";
-				return { acronym, label: "Bitcoin Testnet", crypto: "BTC", satoshi, oshi, blockTime };
-			case "litecoin":
-				satoshi = "litoshi";
-				oshi = "lits";
-				acronym = cryptoUnit === "satoshi" ? "lits" : "LTC";
-				blockTime = 2.5;
-				return { acronym, label: "Litecoin", crypto: "LTC", satoshi, oshi, blockTime };
-			case "litecoinTestnet":
-				satoshi = "litoshi";
-				oshi = "lits";
-				acronym = cryptoUnit === "satoshi" ? "lits" : "LTC";
-				blockTime = 2.5;
-				return { acronym, label: "Litecoin Testnet", crypto: "LTC", satoshi, oshi, blockTime };
-			case "pepecoin":
-				satoshi = "ribbit";
-				oshi = "ribbit";
-				acronym = cryptoUnit === "ribbit" ? "ribbit" : "PEPE";
-				blockTime = 1;
-				return { acronym, label: "Pepecoin", crypto: "PEPE", satoshi, oshi, blockTime };
-			default:
-				acronym = cryptoUnit === "satoshi" ? "sats" : "BTC";
-				return { acronym, label: "Bitcoin", crypto: "BTC", satoshi, oshi, blockTime };
-		}
+		let satoshi = "ribbit";
+		let oshi = "ribbit";
+		let acronym = cryptoUnit === "ribbit" ? "ribbit" : "PEPE";
+		let blockTime = 1;//min
+		return { acronym, label: "Pepecoin", crypto: "PEPE", satoshi, oshi, blockTime };
 	} catch (e) {
 		console.log(e);
 	}

@@ -939,7 +939,7 @@ class SendTransaction extends PureComponent {
 								thumbTintColor={colors.white}
 								minimumTrackTintColor={colors.lightPurple}
 								maximumValue={this.state.maximumFee}
-								minimumValue={1}
+								minimumValue={1000}
 								value={Number(this.state.fee) || Number(this.state.recommendedFee)}
 							/>
 						</View>

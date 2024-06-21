@@ -34,8 +34,8 @@ export const getRecommendedFee = ({ coin = "bitcoin", transactionSize = 256 } = 
 			resolve({ error: true, errorTitle, errorMsg });
 		};
 
-		let recommendedFee = 4;
-		let maximumFee = 128;
+		let recommendedFee = 1000;
+		let maximumFee = 2000;
 		try {
 			const feeResponse = await walletHelpers.feeEstimate.default({ selectedCrypto: coin });
 			if (!feeResponse.data.error && feeResponse.data > 0) {

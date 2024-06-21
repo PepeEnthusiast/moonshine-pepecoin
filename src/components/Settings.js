@@ -932,7 +932,7 @@ class Settings extends PureComponent {
 		try {keyDerivationPath = this.props.wallet.wallets[selectedWallet].keyDerivationPath[selectedCrypto];} catch (e) {}
 		let coinDataLabel = "?";
 		try {coinDataLabel = getCoinData({ selectedCrypto, cryptoUnit: "BTC" });} catch (e) {}
-		let addressType = "bech32";
+		let addressType = "legacy";
 		try {addressType = this.props.wallet.wallets[selectedWallet].addressType[selectedCrypto];} catch (e) {}
 		const cryptoLabel = capitalize(selectedCrypto);
 		return (
@@ -1049,8 +1049,6 @@ class Settings extends PureComponent {
 								currentValue={addressType}
 								options={[
 									{value: "Legacy", onPress: () => this.updateAddressType({ addressType: "legacy" }) },
-									{value: "Segwit", onPress: () => this.updateAddressType({ addressType: "segwit" }) },
-									{value: "Bech32", onPress: () => this.updateAddressType({ addressType: "bech32" }) },
 								]}
 								loading={this.state.rescanningWallet}
 							/>

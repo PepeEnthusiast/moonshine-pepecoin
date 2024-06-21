@@ -43,6 +43,17 @@ const networks = {
 		pubKeyHash: 0x6f,
 		scriptHash: 0x3a,
 		wif: 0xef
+	},
+	pepecoin: {
+		messagePrefix: '\x18Pepecoin Signed Message:\n',
+		bech32: '',
+		bip32: {
+			public: 0x02facafd,
+			private: 0x02fac398
+		},
+		pubKeyHash: 0x38,
+		scriptHash: 0x16,
+		wif: 0x9e
 	}
 };
 
@@ -61,7 +72,8 @@ const supportsRbf = {
 	bitcoin: true,
 	bitcoinTestnet: true,
 	litecoin: false,
-	litecoinTestnet: false
+	litecoinTestnet: false,
+	pepecoin: false
 };
 
 const zeroValueItems = {
@@ -69,6 +81,7 @@ const zeroValueItems = {
 	bitcoinTestnet: 0,
 	litecoin: 0,
 	litecoinTestnet: 0,
+	pepecoin: 0,
 	timestamp: null
 };
 
@@ -77,6 +90,7 @@ const arrayTypeItems = {
 	bitcoinTestnet: [],
 	litecoin: [],
 	litecoinTestnet: [],
+	pepecoin: [],
 	timestamp: null
 };
 
@@ -85,6 +99,7 @@ const objectTypeItems = {
 	bitcoinTestnet: {},
 	litecoin: {},
 	litecoinTestnet: {},
+	pepecoin: {},
 	timestamp: null
 };
 
@@ -108,19 +123,22 @@ const defaultWalletShape = {
 		bitcoin: "84",
 		bitcoinTestnet: "84",
 		litecoin: "84",
-		litecoinTestnet: "84"
+		litecoinTestnet: "84",
+		pepecoin: "84"
 	},
 	coinTypePath: {
 		bitcoin: "0",
 		bitcoinTestnet: "1",
 		litecoin: "2",
-		litecoinTestnet: "1"
+		litecoinTestnet: "1",
+		pepecoin: "3",
 	},
 	addressType: { //Accepts bech32, segwit, legacy
 		bitcoin: "bech32",
 		bitcoinTestnet: "bech32",
 		litecoin: "bech32",
-		litecoinTestnet: "bech32"
+		litecoinTestnet: "bech32",
+		pepecoin: "bech32"
 	},
 	rbfData: objectTypeItems
 };
@@ -135,6 +153,8 @@ const getCoinImage = (coin = "bitcoin") => {
 				return require(`../assets/bitcoin.png`);
 			case "litecoin":
 				return require(`../assets/litecoin.png`);
+			case "pepecoin":
+				return require(`../assets/pepecoin.png`);
 			default:
 				return require(`../assets/bitcoin.png`);
 		}
@@ -170,6 +190,12 @@ const getCoinData = ({ selectedCrypto = "bitcoin", cryptoUnit = "satoshi" }) => 
 				acronym = cryptoUnit === "satoshi" ? "lits" : "LTC";
 				blockTime = 2.5;
 				return { acronym, label: "Litecoin Testnet", crypto: "LTC", satoshi, oshi, blockTime };
+			case "pepecoin":
+				satoshi = "ribbit";
+				oshi = "ribbit";
+				acronym = cryptoUnit === "ribbit" ? "ribbit" : "PEPE";
+				blockTime = 1;
+				return { acronym, label: "Pepecoin", crypto: "PEPE", satoshi, oshi, blockTime };
 			default:
 				acronym = cryptoUnit === "satoshi" ? "sats" : "BTC";
 				return { acronym, label: "Bitcoin", crypto: "BTC", satoshi, oshi, blockTime };

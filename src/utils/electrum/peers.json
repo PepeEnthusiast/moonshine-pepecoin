@@ -24,5 +24,8 @@
   "litecoinTestnet": [
     {"host": "electrum-ltc.bysh.me", "ssl": 51002, "tcp": 51001},
     {"host": "electrum.ltc.xurious.com", "ssl": 51002, "tcp": 51001}
+  ],
+  "pepecoin": [
+    {"host": "mainnet.pepeblocks.com", "ssl": 50002, "tcp": 50001}
   ]
 }

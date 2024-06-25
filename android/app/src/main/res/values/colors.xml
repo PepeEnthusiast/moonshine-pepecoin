@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="status_bar_color">#57158f</color>
-    <color name="purple">#631e9a</color>
-    <color name="darkPurple">#57158f</color>
-    <color name="primary_dark">#631e9a</color>
-    <color name="bootsplash_background">#631e9a</color>
+    <color name="status_bar_color">#55883A</color>  
+    <color name="iconBackground">#55883A</color>
+    <color name="purple">#55883A</color>
+    <color name="darkPurple">#55883A</color>
+    <color name="primary_dark">#55883A</color>
+    <color name="bootsplash_background">#55883A</color>  
+    <color name="splashscreen_background">#55883A</color>
 </resources>

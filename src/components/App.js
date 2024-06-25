@@ -172,7 +172,7 @@ export default class App extends Component {
 		loadingMessage: "",
 		loadingProgress: 0,
 		loadingTransactions: true,
-		loadingAnimationName: "moonshine",
+		loadingAnimationName: "pepecoin",
 		isAnimating: false,
 	};
 
@@ -899,7 +899,7 @@ export default class App extends Component {
 				{ stateId: "displayLoading", opacityId: "loadingOpacity", display: true },
 			];
 			await this.updateItems(items);
-			await this.props.updateWallet({ selectedCrypto: "bitcoin" });
+			await this.props.updateWallet({ selectedCrypto: "pepecoin" });
 
 			//Figure out what type of security/authentication is allowed for settings.
 			let biometricsIsSupported = false;
@@ -1986,11 +1986,7 @@ export default class App extends Component {
 	forceAppUpdate = () => this.forceUpdate();
 
 	getTheme = () => {
-		try {
-			return this.props.settings.darkMode ? themes["dark"] : themes["light"];
-		} catch (e) {
-			return themes["light"];
-		}
+		return themes["light"];
 	};
 
 	render() {

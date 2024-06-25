@@ -695,7 +695,7 @@ const openUrl = (url = "") => {
 
 const openTxId = (txid = "", selectedCrypto = ""): void => {
 	if (!txid || !selectedCrypto) return;
-	openUrl(`https://blockbook.pepeblocks.com/tx/${txid}`);
+	openUrl(`https://pepeblocks.com/tx/${txid}`);
 };
 
 const pauseExecution = async (duration = 500) => {

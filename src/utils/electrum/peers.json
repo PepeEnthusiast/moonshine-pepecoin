@@ -1,5 +1,6 @@
 {
   "pepecoin": [
-    {"host": "mainnet.pepeblocks.com", "ssl": 50002, "tcp": 50001}
+    {"host": "mainnet.pepeblocks.com", "ssl": 50002, "tcp": 50001},
+    {"host": "mainnet.pepelum.site", "ssl": 50002, "tcp": 50001}
   ]
 }

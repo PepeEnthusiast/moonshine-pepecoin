@@ -910,7 +910,7 @@ class Settings extends PureComponent {
 	getExchangeRateOptions = () => {
 		return [
 			{value: "Coingecko", onPress: () => this.updateExchangeRateService({ selectedService: "coingecko" })},
-			{value: "CoinCap", onPress: () => this.updateExchangeRateService({selectedService: "coincap"})}
+			/*{value: "CoinCap", onPress: () => this.updateExchangeRateService({selectedService: "coincap"})}*/
 		];
 	};
 
@@ -919,10 +919,11 @@ class Settings extends PureComponent {
 	};
 
 	isDarkMode = () => {
-		try {
+		return false;
+		/*try {
 			if (this.props.settings["darkMode"] === undefined) return false;
 			return this.props.settings["darkMode"];
-		} catch {return false;}
+		} catch {return false;}*/
 	};
 
 	render() {
@@ -959,8 +960,8 @@ class Settings extends PureComponent {
 								<SettingSwitch setting="biometrics" value={this.props.settings["biometrics"]} title={`Enable ${this.props.settings.biometricTypeSupported}`} onPress={() => this.toggleSetting("biometrics")} />
 							}
 							<SettingSwitch setting="pin" value={this.props.settings["pin"]} title="Enable Pin" onPress={this.togglePin} />
-							<SettingSwitch setting="theme" value={this.isDarkMode()} title="Dark Mode" onPress={this.toggleTheme} />
-							<SettingSwitch setting="testnet" value={this.props.settings["testnet"]} title="Enable Testnet" onPress={this.toggleTestnet} />
+							{/*<SettingSwitch setting="theme" value={this.isDarkMode()} title="Dark Mode" onPress={this.toggleTheme} />
+							<SettingSwitch setting="testnet" value={this.props.settings["testnet"]} title="Enable Testnet" onPress={this.toggleTestnet} />*/}
 							<SettingSwitch setting="rbf" value={this.props.settings["rbf"]} title="Enable RBF" onPress={this.toggleRBF} />
 							<SettingSwitch setting="sendTransactionFallback" value={this.props.settings["sendTransactionFallback"]} title="Send Transaction Fallback" onPress={this.toggleSendTransactionFallback} />
 
@@ -1125,7 +1126,7 @@ class Settings extends PureComponent {
 								col2Style={{ flex: 1.2, alignItems: "center", justifyContent: "center", textAlign: "center" }}
 							/>
 
-							<View style={{ alignItems: "center", justifyContent: "center", marginBottom: 20 }}>
+							{/*<View style={{ alignItems: "center", justifyContent: "center", marginBottom: 20 }}>
 								<View style={[styles.header, { marginBottom: 5 }]}>
 									<Text style={[styles.title, { color: colors.white, fontWeight: "bold" }]}>Support</Text>
 								</View>
@@ -1157,7 +1158,7 @@ class Settings extends PureComponent {
 								col2Style={{ flex: 1.2, alignItems: "center", justifyContent: "center", textAlign: "center" }}
 							/>}
 
-							<Text style={[styles.title, { color: colors.white, textAlign: "center" }]}>{`Version: ${version}`}</Text>
+							<Text style={[styles.title, { color: colors.white, textAlign: "center" }]}>{`Version: ${version}`}</Text>*/}
 
 							<View style={{ paddingVertical: 70 }} />
 						</TouchableOpacity>

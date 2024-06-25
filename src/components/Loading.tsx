@@ -17,7 +17,7 @@ const {
 	getCoinImage
 } = require("../utils/networks");
 
-const getAnimation = (name = "astronaut") => {
+const getAnimation = (name = "pepecoin") => {
 	try {
 		switch (name) {
 			case "moonshine":
@@ -73,7 +73,7 @@ const _Loading = ({loadingOpacity = 0, loadingMessage = "Loading State", loading
 				source={getAnimation(animationName)}
 				autoPlay={true}
 				loop={true}
-				style={{ width: animationName === "moonshine" ? 180 : 150, height: animationName === "moonshine" ? 180 : 150, marginBottom: 10 }}
+				style={{ width: animationName === "pepecoin" ? 180 : 150, height: animationName === "pepecoin" ? 180 : 150, marginBottom: 10 }}
 			/>
 		);
 	};

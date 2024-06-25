@@ -153,15 +153,15 @@ class TransactionDetail extends PureComponent {
 	};
 	
 	openBlock = (block): void => {
-		openUrl(`https://blockbook.pepeblocks.com/block/${block}`);
+		openUrl(`https://pepeblocks.com/block/${block}`);
 	};
 	
 	openAddress = (address = ""): void => {
-		openUrl(`https://blockbook.pepeblocks.com/address/${address}`);
+		openUrl(`https://pepeblocks.com/address/${address}`);
 	};
 	
 	openMessage = (tx = ""): void => {
-		openUrl(`https://blockbook.pepeblocks.com/tx/${tx}`);
+		openUrl(`https://pepeblocks.com/tx/${tx}`);
 	};
 	
 	getAmount = (amount, displayFeePerByte = true): string => {

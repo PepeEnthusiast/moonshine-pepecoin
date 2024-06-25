@@ -89,11 +89,19 @@ const coinGeckoExchangeRateHelper = async ({ selectedCrypto = "bitcoin", selecte
 	try {
 		let coin = selectedCrypto.toLowerCase();
 		coin = coin.replace("testnet", "");
+		if(coin == 'pepecoin') {
+			coin = 'pepecoin-network';
+		}
 
 		const response = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${coin}&vs_currencies=${selectedCurrency}`);
 		const jsonResponse = await response.json();
-		exchangeRate = Number(jsonResponse[selectedCrypto][selectedCurrency]).toFixed(2);
+		console.log(jsonResponse);
+		const value = jsonResponse[coin][selectedCurrency];
+		console.log(value);
+		exchangeRate = parseFloat(value).toFixed(8);
+		console.log('a: ' + exchangeRate);
 		if (exchangeRate === 0 || isNaN(exchangeRate)) return ({ error: true, data: "Invalid Exchange Rate Data." });
+		console.log('b: ' + exchangeRate);
 		return ({ error: false, data: exchangeRate });
 	} catch (e) {
 		return ({ error: true, data: "Invalid Exchange Rate Data." });
@@ -406,7 +414,7 @@ const fallbackBroadcastTransaction = async ({ rawTx = "", selectedCrypto = "bitc
 		};
 		let response = "";
 
-		//TODO: remove other coins and fallback to blockbook.pepeblocks.com (pepecoin)
+		//TODO: remove other coins and fallback to pepeblocks.com (pepecoin)
 
 		switch (selectedCrypto) {
 			case "bitcoin":

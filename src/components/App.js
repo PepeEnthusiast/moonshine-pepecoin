@@ -2234,14 +2234,14 @@ export default class App extends Component {
 							/>
 						</Animated.View>}
 
-						<DefaultModal
+						{/*<DefaultModal
 							isVisible={this.state.displayWelcomeModal}
 							onClose={this._closeWelcomeModal}
 							type="ScrollView"
 							style={styles.modal}
 						>
 							<Welcome onClose={this._closeWelcomeModal} />
-						</DefaultModal>
+						</DefaultModal>*/}
 
 						<DefaultModal
 							isVisible={this.state.displayBackupPhrase}

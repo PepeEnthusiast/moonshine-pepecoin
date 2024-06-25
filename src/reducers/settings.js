@@ -40,7 +40,7 @@ module.exports = (state = {
 		host: "",
 		port: "", //Default ports for BTC are: "s": "50002" && "t": "50001"
 	},
-	sendTransactionFallback: true, //If electrum fails to broadcast a transaction for any reason the app will attempt to use an api to broadcast instead. Can be toggled on & off in Settings
+	sendTransactionFallback: false, //If electrum fails to broadcast a transaction for any reason the app will attempt to use an api to broadcast instead. Can be toggled on & off in Settings
 	rbf: true,
 	signMessage: {
 		message: "",
@@ -76,7 +76,7 @@ module.exports = (state = {
 					host: "",
 					port: "", //Default BTC ports are: "s": "50002" && "t": "50001"
 				},
-				sendTransactionFallback: true,
+				sendTransactionFallback: false,
 				rbf: true
 			};
 

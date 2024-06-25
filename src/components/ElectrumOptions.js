@@ -408,13 +408,13 @@ const styles = StyleSheet.create({
 		minWidth: "20%",
 		paddingVertical: 8,
 		marginRight: 2,
-		backgroundColor: colors.purple
+		backgroundColor: '#000'
 	},
 	rightButton: {
 		minWidth: "26%",
 		paddingVertical: 8,
 		marginLeft: 2,
-		backgroundColor: colors.purple
+		backgroundColor: '#000'
 	},
 	xButton: {
 		position: "absolute",

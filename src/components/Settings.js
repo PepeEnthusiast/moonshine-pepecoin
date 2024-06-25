@@ -956,15 +956,6 @@ class Settings extends PureComponent {
 								<View style={{ height: 1.5, backgroundColor: colors.white, width: "80%" }} />
 							</View>
 
-							{this.props.settings.biometricsIsSupported &&
-								<SettingSwitch setting="biometrics" value={this.props.settings["biometrics"]} title={`Enable ${this.props.settings.biometricTypeSupported}`} onPress={() => this.toggleSetting("biometrics")} />
-							}
-							<SettingSwitch setting="pin" value={this.props.settings["pin"]} title="Enable Pin" onPress={this.togglePin} />
-							{/*<SettingSwitch setting="theme" value={this.isDarkMode()} title="Dark Mode" onPress={this.toggleTheme} />
-							<SettingSwitch setting="testnet" value={this.props.settings["testnet"]} title="Enable Testnet" onPress={this.toggleTestnet} />*/}
-							<SettingSwitch setting="rbf" value={this.props.settings["rbf"]} title="Enable RBF" onPress={this.toggleRBF} />
-							<SettingSwitch setting="sendTransactionFallback" value={this.props.settings["sendTransactionFallback"]} title="Send Transaction Fallback" onPress={this.toggleSendTransactionFallback} />
-
 							<SettingGeneral
 								value={`Selected Fiat Currency:\n${this.getSelectedCurrency()}`}
 								col1Image={<Fontisto name="money-symbol" style={{ paddingVertical: 2 }} size={50} />}
@@ -972,6 +963,15 @@ class Settings extends PureComponent {
 								valueStyle={{ fontSize: 16, textAlign: "center", fontWeight: "bold" }}
 								col2Style={{ flex: 1.2, alignItems: "center", justifyContent: "center", textAlign: "center" }}
 							/>
+
+							<SettingSwitch setting="rbf" value={this.props.settings["rbf"]} title="Enable RBF" onPress={this.toggleRBF} />
+							{this.props.settings.biometricsIsSupported &&
+								<SettingSwitch setting="biometrics" value={this.props.settings["biometrics"]} title={`Enable ${this.props.settings.biometricTypeSupported}`} onPress={() => this.toggleSetting("biometrics")} />
+							}
+							<SettingSwitch setting="pin" value={this.props.settings["pin"]} title="Enable Pin" onPress={this.togglePin} />
+							{/*<SettingSwitch setting="theme" value={this.isDarkMode()} title="Dark Mode" onPress={this.toggleTheme} />
+							<SettingSwitch setting="testnet" value={this.props.settings["testnet"]} title="Enable Testnet" onPress={this.toggleTestnet} />*/}
+							{/*<SettingSwitch setting="sendTransactionFallback" value={this.props.settings["sendTransactionFallback"]} title="Send Transaction Fallback" onPress={this.toggleSendTransactionFallback} />
 
 							<MultiOptionRow
 								title="Exchange Rate Source"
@@ -988,7 +988,7 @@ class Settings extends PureComponent {
 									{key: "BTC", value: coinDataLabel.acronym, onPress: () => this.updateCryptoUnit("BTC") },
 									{key: "satoshi", value: coinDataLabel.satoshi, onPress: () => this.updateCryptoUnit("satoshi") }
 								]}
-							/>
+							/>*/}
 
 							<SettingGeneral
 								title=""

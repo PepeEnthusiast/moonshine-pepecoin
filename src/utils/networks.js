@@ -73,19 +73,10 @@ const getCoinImage = (coin = "pepecoin") => {
 };
 
 const getCoinData = ({ selectedCrypto = "bitcoin", cryptoUnit = "satoshi" }) => {
-	/*try {
-		let satoshi = "ribbit";
-		let oshi = "ribbit";
-		let acronym = cryptoUnit === "ribbit" ? "ribbit" : "PEPE";
-		let blockTime = 1;//min
-		return { acronym, label: "Pepecoin", crypto: "PEPE", satoshi, oshi, blockTime };
-	} catch (e) {
-		console.log(e);
-	}*/
 	try {
 		let satoshi = "ribbit";
 		let oshi = "sats";
-		let blockTime = 10; //min
+		let blockTime = 1; //min
 		let acronym = cryptoUnit === "satoshi" ? "ribbit" : "PEPE";
 		return { acronym, label: "Bitcoin", crypto: "PEPE", satoshi, oshi, blockTime };
 	} catch (e) {

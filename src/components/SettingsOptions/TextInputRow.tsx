@@ -42,7 +42,7 @@ const _TextInputRow = ({ title = "", onChangeText = () => null, currentValue = "
 						/>
 					</View>
 					<View style={styles.displayOptionContainer}>
-						<TouchableOpacity key={submitText} onPress={onPress} style={[styles.cryptoUnitButton, { backgroundColor: colors.lightPurple }]}>
+						<TouchableOpacity key={submitText} onPress={onPress} style={[styles.cryptoUnitButton, { backgroundColor: '#222' }]}>
 							<Text style={[styles.text, { color: colors.white}]}>{submitText}</Text>
 						</TouchableOpacity>
 					</View>
